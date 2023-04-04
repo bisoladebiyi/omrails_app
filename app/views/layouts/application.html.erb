@@ -5,17 +5,22 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <nav>
-      <%= link_to "Home", root_path %>
-      <%= link_to "About", about_path %>
-      <%= link_to "Contact Us", contact_us_path %>
+    <nav class="text-white py-3 px-10 bg-cyan-400 bg-opacity-40 fixed w-full z-10">
+      <%= link_to "Home", root_path, class: "text-white no-underline" %>
+      <%= link_to "About", about_path, class: "text-white mx-3 no-underline" %>
+      <%= link_to "Contact Us", contact_us_path, class: "text-white no-underline" %>
     </nav>
     <%= yield %>
+    <footer class="mt-20">
+      <hr class="border-slate-400 mx-10" />
+      <p class="text-center text-xs text-slate-400">	&#169; 2023 Abisola <3</p>
+    </footer>
   </body>
 </html>
